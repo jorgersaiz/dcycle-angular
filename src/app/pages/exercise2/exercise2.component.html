@@ -1,0 +1,32 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Ejercicio 2</h2>
+    </div>
+    <h4 class="mb-3">Resultados:</h4>
+    @if (showGraphic) {
+      <h5 class="mb-3">Gráfica</h5>
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [xaxis]="chartOptions.xaxis"
+          [dataLabels]="chartOptions.dataLabels"
+          [yaxis]="chartOptions.yaxis"
+          [colors]="chartOptions.colors"
+          [legend]="chartOptions.legend"
+          [fill]="chartOptions.fill"
+        ></apx-chart>
+      </div>
+    } @else {
+      <p>Loading...</p>
+    }
+    <div class="row g-7">
+      <div class="col-md-10 col-lg-12 order-md-last table-container mb-5">
+        
+        <h5 class="mb-3 mt-3">Tabla</h5>
+        <app-table [tableHead]="tableHead" [data]="tableData"></app-table>
+      </div>
+    </div>
+  </main>
+</div>

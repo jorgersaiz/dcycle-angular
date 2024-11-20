@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr class="first-row">
+        @for (item of tableHead; track $index) {
+          <th scope="col">{{ item }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of data; track $index) {
+        <tr>
+          <th scope="row">{{ $index + 1 }}</th>
+          @for (item of row; track $index) {
+            <td>
+                @if (showImage && item.length === 2) {
+                    <img class="flag" src="https://flagcdn.com/w320/{{item.toLowerCase()}}.png" alt="">
+                }
+                {{ item }}
+            </td>
+          }
+          
+        </tr>
+      }
+    </tbody>
+</table>

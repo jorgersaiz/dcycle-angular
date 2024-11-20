@@ -1,0 +1,25 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Ejercicio 1</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-6 order-md-last">
+        <h4 class="mb-3">Resultados: {{ selectedName }}</h4>
+        @if (selectedName) {
+          <div class="flex">
+
+            <app-card [title]="'Género'" [text]="gender"></app-card>
+            <app-card [title]="'Edad'" [text]="age"></app-card>
+      
+          </div>
+          <app-table [tableHead]="tableHead" [data]="tableData" [showImage]="true"></app-table>
+        }
+      </div>
+      <div class="col-md-7 col-lg-6">
+        <h4 class="mb-3">Formulario de estadísticas</h4>
+        <app-name-form (submitEvent)="submitForm($event)"></app-name-form>
+      </div>
+    </div>
+  </main>
+</div>
